@@ -113,13 +113,13 @@ function largeNumbers({ first, second, third }) {
 */
 
 //Code Here
-function numberGroups({a, b, c}){
-  if (a.length > b.length && a.length > c.length){
-    return a;
-  }
-  else if (b.length > a.length && b.length > c.length){
-    return b;
-  }
-  else return c;
+function numberGroups({ a, b, c }) {
+  let megaArray = [a, b, c];
+  let longest = [];
+  megaArray.forEach(function (element, index, array) {
+    if (element.length > longest.length) {
+      longest = element;
+    }
+  });
+  return longest;
 }
-
