@@ -50,18 +50,29 @@ var employees = [
     3. Return the updated employee array.
 */
 
-function employeeUpdater() {
-  employees.forEach(function(element,index){
-    for (key in employees){
-      if (employee[key] === 'Theo'){
-        delete employees[key]
-      } 
-      else if(employee[key] === 'Lorie'){
-        employees.department = 'HR'
-      }
-    }return employees
-  })
+// function employeeUpdater() {
+//   employees.forEach(function(element,index){
+//     for (key in employees){
+//       if (employee[key] === 'Theo'){
+//         delete employees[key]
+//       } 
+//       else if(employee[key] === 'Lorie'){
+//         employees.department = 'HR'
+//       }
+//     }return employees
+//   })
+// }
+
+let employeeUpdater = () => {
+  for(let key in employees){
+    if(employees[key].firstName === 'Theo'){
+      delete employees[key].firstName;
+    } else if (employees[key].firstName === "Lorie"){
+      employees[key].department = "HR"
+    }
+  } return employees;
 }
+
 
 ////////// PROBLEM 2 //////////
 
@@ -71,15 +82,34 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 
 /*
   The array above represents IDs tied to reported workplace accidents. 
-  An employee accidentally entered in duplicates to array, making it look as though there are more accidents this year than there actually are.
+  An employee accidentally entered in duplicates to array, making it look as though there are more accidents this 
+  year than there actually are.
     1. Write a function called 'removeDuplicates' that will remove all duplicate entries in the workplaceAccidents array.
     2. Use nested for loops to check for duplicate numbers, and then remove the duplicates from the array.
     3. Return the updated array.
 */
 
-//Code Here
+// function removeDuplicates(arr) {
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let j = i + 1; j < arr.length; j++) {
+//       if (arr[i] === arr[j]) {
+//         arr.splice(j, 1)
+//       }
+//     }
+//     return arr
+//   }
+// }
+// removeDuplicates(workplaceAccidents);
 
-
+function removeDuplicates (){
+  let newArray= [];
+  workplaceAccidents.forEach(  function(ouch){
+      if(!newArray.includes(ouch)){
+        newArray.push(ouch)
+      }
+  });
+  return newArray;
+}
 
 ////////// PROBLEM 3 //////////
 
@@ -106,8 +136,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name;
 
 
 
@@ -147,7 +177,7 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
+
 
 
 
